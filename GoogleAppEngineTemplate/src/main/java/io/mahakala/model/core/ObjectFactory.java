@@ -1,10 +1,10 @@
 package io.mahakala.model.core;
 
 import io.mahakala.model.SampleEntity;
-import io.mahakala.service.core.SiteConfiguration;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
+import java.lang.reflect.ParameterizedType;
 import java.net.URI;
 
 import com.googlecode.objectify.NotFoundException;
@@ -24,6 +24,14 @@ public class ObjectFactory<T extends ResourceEntity> {
 	
 	public ObjectFactory (Class<T> clazz, URI base) {
 		 this(clazz, clazz.getSimpleName().replaceFirst("Entity$", ""), base);
+	 }
+	
+	@SuppressWarnings("unchecked")
+	public ObjectFactory (URI base) {
+		this.myClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		 this.resourceType = this.myClass.getSimpleName().replaceFirst("Entity$", "").toLowerCase();
+		 String baseURL = base.toString();
+		 this.base = baseURL+(baseURL.endsWith("/")?this.resourceType : "/"+this.resourceType)+"/";
 	 }
 	
 	public T get(Long id) throws NotFoundException {

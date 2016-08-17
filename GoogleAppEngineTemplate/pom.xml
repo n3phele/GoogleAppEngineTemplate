@@ -63,7 +63,28 @@
           <version>${objectify.version}</version>
         </dependency>
 <!-- [END Objectify_Dependencies] -->
-        
+         <!-- Jackson --> 
+         <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+		    <artifactId>jackson-jaxrs-json-provider</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+		    <artifactId>jackson-jaxrs-xml-provider</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		
         <!-- Jersey -->       
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -91,14 +112,13 @@
             <artifactId>jersey-media-sse</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <!-- if you are using Jersey client specific features -->
-        <!--
+
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-client</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        -->        
+         
 		<dependency>
 		    <groupId>com.google.http-client</groupId>
 		    <artifactId>google-http-client-appengine</artifactId>

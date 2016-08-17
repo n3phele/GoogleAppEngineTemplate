@@ -3,7 +3,6 @@ package io.mahakala.model.core;
 import java.net.URI;
 
 import com.googlecode.objectify.annotation.Id;
-import com.googlecode.objectify.annotation.Index;
 import com.googlecode.objectify.annotation.Unindex;
 
 public class ResourceEntity {
