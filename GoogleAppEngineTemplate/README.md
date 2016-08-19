@@ -2,6 +2,8 @@ App Engine Template environment for IDE Eclipse, Jersey, Maven, Jackson, Objecti
 
 Loosely derived from Googles guestbook maven framework, much of which has been updated or removed. Merged with code from n3phele core to provide basic rest exposure of resources backed with objectify, jax-rs style of rest services definition, and security.
 
+Intent is to push to maven central when the content is a little cleaner :)
+
 Requires [Apache Maven](http://maven.apache.org) 3.1 or greater, and JDK 7+ in order to run.
 
 To build, run
